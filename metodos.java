@@ -102,5 +102,18 @@ public String SoloNumeros(Scanner sc) {
     return texto;
 }
 
+public float ValidarPositivo(Scanner sc) {
+    while (!sc.hasNextFloat()) {
+        System.out.println("Por favor tenga en cuenta que se le esta pidiendo un dato numerico");
+        sc.next();
+    }
+    float numero = sc.nextFloat();
+    if (numero < 0) {
+        System.out.println("Por favor ingrese un numero positivo");
+        return ValidarPositivo(sc);
+    }
+    return numero;
+}
+
 
 }
